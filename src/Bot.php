@@ -124,7 +124,7 @@ class Bot
     /*
      * Each
      * */
-    public function each($links, $callback)
+    protected function each($links, $callback)
     {
         $items = [];
         foreach ($links as $link):
@@ -144,7 +144,7 @@ class Bot
     /*
      * Response
      * */
-    public function newsResponse($title, $category, $content, $photo, $date, $link)
+    protected function newsResponse($title, $category, $content, $photo, $date, $link)
     {
         return [
             'title'    => $title,
