@@ -123,6 +123,19 @@ class Bot
     }
 
     /*
+     * Outer Html
+     * */
+    protected function outerHtml($dom, $element): ?string
+    {
+        try {
+            return trim($dom->find($element)->outerHtml);
+        }
+        catch (\Exception $e) {
+            return null;
+        }
+    }
+
+    /*
      * Each
      * */
     protected function each($links, $callback): ?array
