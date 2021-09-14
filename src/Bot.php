@@ -158,7 +158,7 @@ class Bot
     /*
      * Response
      * */
-    protected function newsResponse($title, $category, $content, $photo, $date, $link, $language = null, $domain): array
+    protected function newsResponse($title, $category, $content, $photo, $date, $link, $language = null, $domain = null): array
     {
         $response = [
             'title'    => $title,
