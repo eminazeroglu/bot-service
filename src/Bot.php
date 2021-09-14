@@ -158,9 +158,9 @@ class Bot
     /*
      * Response
      * */
-    protected function newsResponse($title, $category, $content, $photo, $date, $link): array
+    protected function newsResponse($title, $category, $content, $photo, $date, $link, $language = null, $domain): array
     {
-        return [
+        $response = [
             'title'    => $title,
             'category' => $category,
             'content'  => $content,
@@ -168,5 +168,10 @@ class Bot
             'date'     => $date,
             'link'     => $link,
         ];
+        if ($language)
+            $response = array_merge($response, ['language' => $language]);
+        if ($domain)
+            $response = array_merge($response, ['domain' => $domain]);
+        return $response;
     }
 }
